@@ -1,32 +1,3 @@
-// // Promise Basic
-// const status = false;
-
-// console.log('Task 1');
-
-// // promise definition
-// const promise = new Promise(function(resolve, reject) {
-// 	setTimeout(function() {
-// 		if (status) {
-// 			resolve('Task 2');
-// 		} else {
-// 			reject('Failed');
-// 		}
-// 	}, 2000);
-// });
-
-// // promise call
-// promise
-// 	.then(function(value) {
-// 		console.log(value);
-// 	})
-// 	.catch(function(err) {
-// 		console.log(err);
-// 	});
-
-// console.log('Task 3');
-
-
-
 // Callback to promise
 const paymentSuccess = true;
 const marks = 80;
@@ -75,12 +46,28 @@ function getCertificate() {
 	return promise;
 }
 
-enroll()
-	.then(progress)
-	.then(getCertificate)
-	.then(function(val) {
-		console.log(val)
-	})
-	.catch(function(err) {
+// enroll()
+// 	.then(progress)
+// 	.then(getCertificate)
+// 	.then(function(val) {
+// 		console.log(val)
+// 	})
+// 	.catch(function(err) {
+// 		console.log(err);
+// 	});
+
+// async await pattern
+
+async function course() {
+	try {
+		await enroll();
+		await progress();
+		const message = await getCertificate();
+
+		console.log(message);
+	} catch(err) {
 		console.log(err);
-	});
+	}
+}
+
+course();

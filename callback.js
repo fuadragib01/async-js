@@ -33,6 +33,11 @@ function getCertificate() {
 	}, 1000)
 }
 
+// incorrect process
+// enroll(progress);
+// progress(certificate);
+
+// correct process
 enroll(function() {
 	progress(getCertificate);
 });

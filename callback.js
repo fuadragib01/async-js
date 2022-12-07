@@ -22,7 +22,7 @@ function progress(callback) {
 		} else {
 			console.log("You couldn't get enough marks to get the certificate");
 		}
-	}, 3000)
+	}, 3000);
 }
 
 function getCertificate() {
@@ -30,7 +30,7 @@ function getCertificate() {
 
 	setTimeout(function() {
 		console.log('Congrats! You got the certificate');
-	}, 1000)
+	}, 1000);
 }
 
 // incorrect process
